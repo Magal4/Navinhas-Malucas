@@ -1,12 +1,12 @@
 @font-face 
 {
-	font-family: Titulo;
+	font-family: 'Press Start 2P', monospace;
 	src: url(../fontes/ANODETONOONE.TTF);
 }
 
 h1 
 {
-	font-family: Titulo;
+	font-family: 'Press Start 2P', monospace;
 	font-size: 40px;
     color: #000;
     text-align: center;
@@ -14,14 +14,22 @@ h1
 
 body 
 {
-	background-image: url(../img/gif-fundo.gif);
+  height: 100%;               /* corpo ocupa altura total */
+  margin: 0;                  /* remove margens padrão */
+  display: flex;              /* usa flexbox */
+  justify-content: center;    /* centraliza horizontal */
+  align-items: center;        /* centraliza vertical */
+  background-image: url(../img/gif-fundo.gif); /* seu fundo animado */
+  background-size: cover;     /* cobre toda a tela */
+  background-position: center;
+  overflow: hidden;
 }
 
 
 #container 
 {
 	width: 950px;
-	height: auto;
+	height: 630px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
@@ -35,6 +43,7 @@ body
 	background-image: url(../img/Fundo-jogo.jpg);
 	border-color: #FFF;
 	border-style: solid;
+	overflow: hidden;
 }
 
 #jogador 
@@ -45,6 +54,7 @@ body
 	left: 8px;
 	top: 179px;
     background-image: url(../img/Jogador.png);
+	overflow: hidden;
 }
 
 #inimigo1 
@@ -55,6 +65,7 @@ body
 	left: 689px;
 	top: 253px;
 	background-image: url(../img/UFO-inimigo1.png);
+	overflow: hidden;
 }
 
 #inimigo2 
@@ -65,9 +76,10 @@ body
 	left: 775px;
 	top: 447px;
 	background-image: url(../img/UFO-inimigo2.png);
+	overflow: hidden;
 }
 
-#amigo 
+#moeda
 {
 	width: 50px;
 	height: 70px;
@@ -77,15 +89,32 @@ body
 	background-image: url(../img/Coin.png);
 }
 
+#vida
+{
+	width: 100px;
+	height: 75px;
+	position: absolute;
+	left: 10px;
+	top: 464px;
+	background-image: url(../img/Vida-cheia.png);
+}
+
 #inicio 
 {
-	width: 300px;
-	height: 255px;
+	width: 350px;
+	height: 305px;
 	background-color: #FFF;
  	margin-left: auto;
     margin-right: auto;
  	margin-top: 100px;
     padding: 10px;
+	position: absolute;     
+  	top: 35%;               
+ 	left: 50%;              
+ 	transform: translate(-50%, -50%); /* centraliza no meio */
+ 	z-index: 500;           /* garante que fica acima do fundo */
+ 	text-align: center;
+	font-family: 'Press Start 2P', monospace;
 }
 
 p
@@ -164,6 +193,7 @@ ul
 	height: 8px;
 	position: absolute;
 	background-image: url(../img/disparo.png);
+	overflow: hidden;
 }
 
 #explosao1 
@@ -171,6 +201,7 @@ ul
 	width: 15px;
 	height: 87px;
 	position: absolute;
+	overflow: hidden;
 }
 
 #explosao2 
@@ -178,13 +209,7 @@ ul
 	width: 15px;
 	height: 87px;
 	position: absolute;
-}
-
-#explosao3 
-{
-	width: 44px;
-	height: 51px;
-	position: absolute;
+	overflow: hidden;
 }
 
 @keyframes play3 
@@ -217,18 +242,31 @@ ul
 }
 
 /* Score */
-#placar 
-{
-	width: 450px;
-	height: 50px;
-	position: absolute;
-	left: 5px;
-	top: 590px;
+#placar {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;  
+  background-color: #000000;
+  border: 3px solid #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* CSS para o TEXTO "h2" dentro do placar */
+#placar h2 {
+  font-family: 'Press Start 2P', monospace;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-shadow: 2px 2px #222222;
+  margin: 0;
+  padding: 0;
 }
 
 h2 
 {
-	font-family: Titulo;
+	font-family: 'Press Start 2P', monospace;
 	font-size: 20px;
 	color: #FFF
 }
@@ -244,7 +282,7 @@ h2
 
 h3 
 {
-	font-family: Titulo;
+	font-family: 'Press Start 2P', monospace;
 	font-size: 20px;
 	color: #000;
 }
@@ -252,11 +290,30 @@ h3
 #fim
 {
 	width: 350px;
-	height: 200px;
+	height: 250px;
 	background-color: #FFF;
 	margin-left: auto;
 	margin-right: auto;
  	margin-top: 100px;
 	text-align: center;
 	padding: 10px;
+	font-family: 'Press Start 2P', monospace;
+}
+
+#timer {
+  position: absolute;
+  top: 10px;
+  left: 10px;  
+  background-color: #000000;
+  border: 3px solid #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 1000;
+  font-family: 'Press Start 2P', monospace;
+  color: #FFFFFF;
+  font-size: 16px;
+  text-shadow: 2px 2px #222222;
+  margin: 0;
+  padding: 0;
 }
