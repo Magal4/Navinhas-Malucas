@@ -93,7 +93,7 @@ function start()
         {
             let topo = parseInt($("#jogador").css("top"));
             $("#jogador").css("top", topo - 13);
-                if (topo<=0) 
+                if (topo<=10) 
                 {
                     $("#jogador").css("top", topo + 13);
                 }
@@ -142,7 +142,7 @@ function start()
             {
                 posicaoY2 = parseInt(Math.random() * 334);
                 $("#inimigo2").css("left", 900);
-                $("#inimigo2").css("top",);        
+                $("#inimigo2").css("top", posicaoY2);        
             }   
     } 
     // Fim da Função moveInimigo2
@@ -203,7 +203,7 @@ function start()
         function executaDisparo() {
             let posicaoX = parseInt($("#disparo").css("left"));
             
-            $("#disparo").css("left", posicaoX + 20); 
+            $("#disparo").css("left", posicaoX + 8); // Velocidade que o disparo anda
             
             if (posicaoX > 900) 
             { 
@@ -293,7 +293,7 @@ function start()
         // Jogador com a Moeda
         if (colisao5.length > 0) 
         {
-            pontos += 500;
+            pontos += 550;
             somResgate.play();
 
             reposicionaMoeda();
@@ -305,6 +305,7 @@ function start()
         { 
             if (energiaAtual < 3){
             energiaAtual +=1;   }
+            pontos += 400;
             somResgate.play();
 
             reposicionavida();
@@ -485,11 +486,11 @@ function start()
 
     $("#fundoGame").append("<div id='fim'></div>");
 
-    // Agora a gente monta o HTML já com o tempo junto!
+    
     $("#fim").html("<h1> Game Over </h1>" +
                    "<p>Pontuação: " + pontos + "</p>" +
-                   "<p>Tempo: " + tempoFormatado + " segundos</p>" + // <-- LINHA ADICIONADA
-                   "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
+                   "<p>Tempo: " + tempoFormatado + " segundos</p>" + 
+                   "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>"); 
 
     clearInterval(timerInterval);
 
