@@ -1,0 +1,3 @@
+Sinopse do Jogo:
+O projeto consiste em um jogo digital desenvolvido com as linguagens HTML, CSS e JavaScript, cujo objetivo principal é testar a agilidade e os reflexos do jogador. Nele, o usuário controla uma nave espacial e deve sobreviver o maior tempo possível, desviando de obstáculos e destruindo inimigos para alcançar a maior pontuação.
+O jogo propõe uma experiência simples e dinâmica, com foco em jogabilidade fluida, design responsivo e execução direta em navegador, demonstrando a aplicação prática de conceitos de programação web e lógica de jogos.
